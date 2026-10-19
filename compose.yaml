@@ -3,7 +3,7 @@
 name: daymark
 services:
   daymark:
-    image: ghcr.io/killparty/daymark:latest
+    image: ghcr.io/bhadid/daymark:latest
     # To build from source instead, see compose.build.yaml.
     container_name: daymark
     restart: unless-stopped

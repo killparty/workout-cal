@@ -30,7 +30,7 @@ Only Docker is needed.
 
 ```sh
 mkdir daymark && cd daymark
-curl -fsSLO https://raw.githubusercontent.com/killparty/daymark/main/compose.yaml
+curl -fsSLO https://raw.githubusercontent.com/bhadid/daymark/main/compose.yaml
 docker compose up -d
 ```
 
@@ -43,7 +43,7 @@ Open <http://localhost:8080>. Data is stored in the `daymark-data` volume.
 Without Compose:
 
 ```sh
-docker run -d --name daymark -p 8080:8080 -v daymark-data:/data ghcr.io/killparty/daymark:latest
+docker run -d --name daymark -p 8080:8080 -v daymark-data:/data ghcr.io/bhadid/daymark:latest
 ```
 
 ### Build from source
@@ -51,7 +51,7 @@ docker run -d --name daymark -p 8080:8080 -v daymark-data:/data ghcr.io/killpart
 To run unreleased changes, or if you'd rather not pull the published image:
 
 ```sh
-git clone https://github.com/killparty/daymark && cd daymark
+git clone https://github.com/bhadid/daymark && cd daymark
 docker compose -f compose.yaml -f compose.build.yaml up -d --build
 ```
 

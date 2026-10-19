@@ -1,7 +1,7 @@
 # Deployment
 
 Docker Compose is the primary way to run Daymark. The image is published for `amd64` and `arm64`
-(Raspberry Pi 4/5) at `ghcr.io/killparty/daymark`. To build the image yourself from a checkout
+(Raspberry Pi 4/5) at `ghcr.io/bhadid/daymark`. To build the image yourself from a checkout
 instead, use `docker compose -f compose.yaml -f compose.build.yaml up -d --build`.
 
 ## Minimal: private network, no login
@@ -9,7 +9,7 @@ instead, use `docker compose -f compose.yaml -f compose.build.yaml up -d --build
 ```yaml
 services:
   daymark:
-    image: ghcr.io/killparty/daymark:latest
+    image: ghcr.io/bhadid/daymark:latest
     restart: unless-stopped
     environment:
       AUTH_MODE: none
@@ -33,7 +33,7 @@ only way in.
 ```yaml
 services:
   daymark:
-    image: ghcr.io/killparty/daymark:latest
+    image: ghcr.io/bhadid/daymark:latest
     restart: unless-stopped
     environment:
       AUTH_MODE: none          # or proxy, see below
@@ -122,4 +122,4 @@ Everything lives in `/data/daymark.db` (plus `-wal`/`-shm` files while running).
 ## Upgrades
 
 `docker compose pull && docker compose up -d`. Database migrations run automatically at startup.
-Pin a version tag (e.g. `ghcr.io/killparty/daymark:0.1`) if you prefer to upgrade deliberately.
+Pin a version tag (e.g. `ghcr.io/bhadid/daymark:0.1`) if you prefer to upgrade deliberately.
